@@ -1,0 +1,34 @@
+name: Validate public skill
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out complete history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Validate skill content
+        run: python remove-chinese-ai-tics/scripts/validate_skill_content.py --evaluation-suite tests/evaluation-suite.md
+
+      - name: Test public audit rules
+        run: python tools/audit_public_repo.py --self-test
+
+      - name: Audit public files and history
+        run: python tools/audit_public_repo.py
+
+      - name: Check whitespace
+        run: git log --check --oneline --all
