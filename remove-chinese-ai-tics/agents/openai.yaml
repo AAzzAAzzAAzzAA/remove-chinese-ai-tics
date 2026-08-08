@@ -1,0 +1,4 @@
+interface:
+  display_name: "中文 AI 口癖清理"
+  short_description: "清除通用与创意文本中的中文模型口癖，保护事实和原有声音"
+  default_prompt: "使用 $remove-chinese-ai-tics 清理这段中文通用或创意文本中的模型口癖、华丽词簇和结构模板，同时保留事实、人物、逻辑与原有声音。"
