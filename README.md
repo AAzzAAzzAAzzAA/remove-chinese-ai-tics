@@ -67,3 +67,7 @@ python3 tools/audit_public_repo.py
 回归案例位于 [`tests/evaluation-suite.md`](tests/evaluation-suite.md)。它们用于维护规则边界，目前不会自动调用模型生成结果。GitHub Actions 会在每次 push 和 pull request 时运行内容校验、审计器自测、公开审计与差异检查。
 
 Skill 只负责语言与结构清理，不补写证据、专业判断、采访材料或未经提供的剧情设定。事实完整性与语言清理发生冲突时，优先保留事实。
+
+## 社区
+
+本项目已收录于 [LINUX DO](https://linux.do/)。
